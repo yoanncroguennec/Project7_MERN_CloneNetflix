@@ -3,8 +3,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { BsFillPlayFill, BsInfoCircle } from "react-icons/bs";
 import { Box, Modal, Button, Typography, styled } from "@mui/material";
-import dynamic from "next/dynamic";
-const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
+import ReactPlayer from "react-player";
 import { AiOutlineClose } from "react-icons/ai";
 
 import { baseUrl } from "@/utils/constants/Constants";

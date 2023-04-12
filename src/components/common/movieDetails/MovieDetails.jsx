@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { IoIosInformationCircle } from "react-icons/io";
-import { FaPlay } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { Box, Modal, Button, Typography, styled } from "@mui/material";
 import { BsFillPlayFill, BsInfoCircle } from "react-icons/bs";
-
-import dynamic from "next/dynamic";
+import ReactPlayer from "react-player";
 import Navbar from "@/components/layouts/navbar/Navbar";
 import { baseUrl } from "@/utils/constants/Constants";
-const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 const style = {
   position: "absolute",
