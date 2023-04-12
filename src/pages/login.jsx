@@ -39,6 +39,8 @@ const connectionSocialNetworks = [
 ];
 
 
+
+
 export default function Login() {
   
   return (
@@ -60,6 +62,7 @@ export default function Login() {
           {connectionSocialNetworks.map(({ icon, text, url }) => (
             <Grid
               container
+              key={text}
               sx={{
                 mt: 2,
                 mb: 2,

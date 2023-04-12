@@ -2,9 +2,18 @@ import React from 'react'
 
 export default function Footer() {
     return (
-      <footer style={{ background: "#000", padding: "25px 100px", color: "#909191" }}>
+      <footer
+        style={{ background: "#000", padding: "25px 100px", color: "#909191" }}
+      >
         <h5>Des questions ? Appelez le 0805-220-512</h5>
-        <div class="colonnes" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
+        <div
+          class='colonnes'
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+          }}
+        >
           <div>
             <p>FAQ</p>
             <p>Relations Investisseurs</p>
@@ -13,7 +22,7 @@ export default function Footer() {
             <p>Programmes originaux Netflix</p>
           </div>
           <div>
-            <p>Centre d'aide</p>
+            <p>Centre d&apos;aide</p>
             <p>Relations Investisseurs</p>
             <p>Modes de lecture</p>
             <p>Mentions légales</p>
@@ -22,7 +31,7 @@ export default function Footer() {
           <div>
             <p>FAQ</p>
             <p>Recrutement</p>
-            <p>Conditions d'utilisation</p>
+            <p>Conditions d&apos;utilisation</p>
             <p>Nous contacter</p>
           </div>
           <div>

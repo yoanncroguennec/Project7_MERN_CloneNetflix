@@ -23,7 +23,8 @@ import { useRouter } from "next/router";
 
 const theme = createTheme();
 
-export default function register() {
+
+export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [conPassword, setConPassword] = useState("");
@@ -45,7 +46,7 @@ export default function register() {
     if (cookies?.user) {
       router.push("/");
     }
-  }, [router]);
+  }, [session, cookies, router]);
 
   async function submitHandler(e) {
     e.preventDefault();

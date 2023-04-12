@@ -148,7 +148,7 @@ export default function Featured({ moviePosters, type }) {
             >
               <option>Genre</option>
               {valueCategory.map(({ text, value }) => (
-                <option value={value}>{text}</option>
+                <option key={value} value={value}>{text}</option>
               ))}
             </select>
           </BoxCategory>
