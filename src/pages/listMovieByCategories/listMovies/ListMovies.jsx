@@ -70,10 +70,11 @@ export default function ListMovies({ movie }) {
     <Link href={`/movie/${movie.id}`} style={styleLink}>
       <RootListMovies>
         <Image
-          src={`${baseUrlImg}${movie?.backdrop_path || movie?.poster_path}`}
+          alt=""
           height={750}
-          width={750}
+          src={`${baseUrlImg}${movie?.backdrop_path || movie?.poster_path}`}
           style={styleImg}
+          width={750}
         />
         <TypoTitle variant={matches ? "h6" : "h5"}>
           {movie?.title || movie?.name || movie?.original_name}

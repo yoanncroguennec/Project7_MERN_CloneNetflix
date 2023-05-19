@@ -24,18 +24,6 @@ export default function MovieDetail ({ movie }) {
     [theme.breakpoints.down("sm")]: {},
   }));
 
-  //////////////////// SESSION AUTH ////////////////////
-  const { data: session } = useSession();
-  if (!session) return <Login />;
-
-  //////////////////// TRAILER URL ////////////////////
-  const trailerIndex = movie.videos.results.findIndex(
-    (element) => element.type === "Trailer"
-  );
-
-  const urlTrailerVideo = `https://www.youtube.com/watch?v=${movie.videos?.results[trailerIndex]?.key}`;
-
-
   //////////////////// OPEN MODAL INFOS MOVIE ////////////////////
   const [openModalInfosMovie, setOpenModalInfosMovie] = useState(false);
 
@@ -57,7 +45,16 @@ export default function MovieDetail ({ movie }) {
     setShowPlayerTrailer(false);
   }
 
-  console.log(urlTrailerVideo);
+  //////////////////// SESSION AUTH ////////////////////
+  const { data: session } = useSession();
+  if (!session) return <Login />;
+
+  //////////////////// TRAILER URL ////////////////////
+  const trailerIndex = movie.videos.results.findIndex(
+    (element) => element.type === "Trailer"
+  );
+
+  const urlTrailerVideo = `https://www.youtube.com/watch?v=${movie.videos?.results[trailerIndex]?.key}`;
 
   return (
     <>
@@ -69,20 +66,21 @@ export default function MovieDetail ({ movie }) {
           OpenModalTrailer={OpenModalTrailer}
         />
       </RootFeatured>
+
       {/* MODAL INFOS */}
       <ModalInfosMovie
         movie={movie}
         openModalInfosMovie={openModalInfosMovie}
         setOpenModalInfosMovie={setOpenModalInfosMovie}
-        OpenModalTrailer={OpenModalTrailer}
         CloseModalInfosMovie={CloseModalInfosMovie}
+        OpenModalTrailer={OpenModalTrailer}
       />
 
       {/* MODAL PLAYER TRAILER */}
       <ModalPlayerTrailer
         openModalTrailer={openModalTrailer}
         urlTrailerVideo={urlTrailerVideo}
-        showPlayer={showPlayerTrailer}
+        showPlayerTrailer={showPlayerTrailer}
         CloseModalTrailer={CloseModalTrailer}
       />
     </>

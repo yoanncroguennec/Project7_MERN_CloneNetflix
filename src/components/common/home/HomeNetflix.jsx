@@ -59,13 +59,14 @@ export default function HomeNetflix({
     },
   ];
 
+  //////////////////// RETURN ////////////////////
   return (
     // {/* LIST ROWS */}
     <RootHomeNetflix>
       {/* FEATURED */}
       <Featured type='movie' moviePosters={moviePosters} />
       {dataListRowMovies?.map(({ title, movies, url }) => (
-        <Row title={title} movies={movies} url={url} />
+        <Row key={title} movies={movies} title={title} url={url} />
       ))}
     </RootHomeNetflix>
   );

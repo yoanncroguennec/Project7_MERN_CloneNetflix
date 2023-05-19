@@ -84,21 +84,21 @@ export default function Featured({ moviePosters, type }) {
         />
       </RootFeatured>
 
-      {/* MODAL PLAYER TRAILER */}
-      <ModalPlayerTrailer
-        openModalTrailer={openModalTrailer}
-        urlTrailerVideo={urlTrailerVideo}
-        showPlayer={showPlayerTrailer}
-        CloseModalTrailer={CloseModalTrailer}
-      />
-
       {/* MODAL INFOS */}
       <ModalInfosMovie
         movie={movie}
         openModalInfosMovie={openModalInfosMovie}
         setOpenModalInfosMovie={setOpenModalInfosMovie}
-        OpenModalTrailer={OpenModalTrailer}
         CloseModalInfosMovie={CloseModalInfosMovie}
+        OpenModalTrailer={OpenModalTrailer}
+      />
+
+      {/* MODAL PLAYER TRAILER */}
+      <ModalPlayerTrailer
+        openModalTrailer={openModalTrailer}
+        urlTrailerVideo={urlTrailerVideo}
+        showPlayerTrailer={showPlayerTrailer}
+        CloseModalTrailer={CloseModalTrailer}
       />
     </>
   );
