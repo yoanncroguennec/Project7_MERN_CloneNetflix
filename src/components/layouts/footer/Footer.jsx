@@ -1,47 +1,44 @@
-import React from 'react'
+import { Box, styled, Typography } from "@mui/material";
+// DATAS
+import { dataFooter } from "@/utils/data/DataFooter";
 
+
+//////////////////// STYLES ////////////////////
+const RootFooter = styled(Box)(({ theme }) => ({
+  background: "#000",
+  color: "#909191",
+  padding: "25px 100px",
+  [theme.breakpoints.down("sm")]: {},
+}));
+
+const BoxListsColumnsFooter = styled(Box)(({ theme }) => ({
+  display: "grid",
+  gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+  [theme.breakpoints.down("sm")]: {
+    gridTemplateColumns: "repeat(1, minmax(0, 1fr))",
+  },
+}));
+
+const ListsColumnsFooter = styled(Box)(({ theme }) => ({
+  margin: "15px 0",
+  [theme.breakpoints.down("sm")]: {},
+}));
+
+//////////////////// EXPORT FUNCTION ////////////////////
 export default function Footer() {
     return (
-      <footer
-        style={{ background: "#000", padding: "25px 100px", color: "#909191" }}
-      >
-        <h5>Des questions ? Appelez le 0805-220-512</h5>
-        <div
-          class='colonnes'
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-          }}
-        >
-          <div>
-            <p>FAQ</p>
-            <p>Relations Investisseurs</p>
-            <p>Modes de lecture</p>
-            <p>Mentions légales</p>
-            <p>Programmes originaux Netflix</p>
-          </div>
-          <div>
-            <p>Centre d&apos;aide</p>
-            <p>Relations Investisseurs</p>
-            <p>Modes de lecture</p>
-            <p>Mentions légales</p>
-            <p>Programmes originaux Netflix</p>
-          </div>
-          <div>
-            <p>FAQ</p>
-            <p>Recrutement</p>
-            <p>Conditions d&apos;utilisation</p>
-            <p>Nous contacter</p>
-          </div>
-          <div>
-            <p>Compte</p>
-            <p>Utiliser des cartes cadeaux</p>
-            <p>Confidentialité</p>
-            <p>Test de vitesse</p>
-          </div>
-        </div>
-        <p>Netflix, France</p>
-      </footer>
+      <RootFooter>
+        <Typography variant='h6'>
+          Des questions ? Appelez le 0805-220-512
+        </Typography>
+        <BoxListsColumnsFooter>
+          {dataFooter.map(({ titlesColumFooter }) => (
+              <ListsColumnsFooter>{titlesColumFooter.map((item) => (
+                <Typography>{item}</Typography>
+              ))}</ListsColumnsFooter>
+          ))}
+        </BoxListsColumnsFooter>
+        <Typography variant='h6'>Netflix, France</Typography>
+      </RootFooter>
     );
 }

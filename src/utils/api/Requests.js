@@ -1,6 +1,9 @@
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-const BASE_URL = "https://api.themoviedb.org/3";
+// API
+import { BASE_URL } from "./api";
 
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+
+// REQUESTS
 const requests = {
   fetchTrending: `${BASE_URL}/trending/all/week?api_key=${API_KEY}&language=fr-FR`,
   fetchMoviePosters: `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_networks=213&language=fr-FR`,

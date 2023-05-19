@@ -1,54 +1,30 @@
 export const valueCategory = [
   {
-    text: "Aventure",
-    value: "adventure",
+    textCategory: "Tendance actuelle",
+    urlCategory: "/listMovieByCategories/trendingNow",
   },
   {
-    text: "Comédie",
-    value: "comedy",
+    textCategory: "Mieux notée",
+    urlCategory: "/listMovieByCategories/topRated",
   },
   {
-    text: "Crime",
-    value: "crime",
+    textCategory: "Action/Thrillers",
+    urlCategory: "/listMovieByCategories/actionMovies",
   },
   {
-    text: "Fantaisie",
-    value: "fantasy",
+    textCategory: "Comédies",
+    urlCategory: "/listMovieByCategories/comedy",
   },
   {
-    text: "Historique",
-    value: "historical",
+    textCategory: "Films d'horreur",
+    urlCategory: "/listMovieByCategories/horror",
   },
   {
-    text: "Horreur",
-    value: "horror",
+    textCategory: "Films de romance",
+    urlCategory: "/listMovieByCategories/romance",
   },
   {
-    text: "Romance",
-    value: "romance",
-  },
-  {
-    text: "science-fiction",
-    value: "sci-fi",
-  },
-  {
-    text: "Thriller",
-    value: "thriller",
-  },
-  {
-    text: "Western",
-    value: "western",
-  },
-  {
-    text: "Animation",
-    value: "animation",
-  },
-  {
-    text: "Drame",
-    value: "drama",
-  },
-  {
-    text: "Documentaire",
-    value: "documentary",
+    textCategory: "Documentaires",
+    urlCategory: "/listMovieByCategories/documentaries",
   },
 ];

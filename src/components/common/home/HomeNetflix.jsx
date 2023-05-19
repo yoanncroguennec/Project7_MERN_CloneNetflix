@@ -1,28 +1,72 @@
-import Featured from '@/components/common/home/featured/Featured'
-import Footer from '@/components/layouts/footer/Footer'
-import React from 'react'
-import Row from './row/Row'
+import { Box, styled } from "@mui/material";
+// COMPONENTS
+import { Featured, Row } from "../index";
 
-export default function HomeNetflix({ moviePosters,   trendingNow,
+//////////////////// STYLES ////////////////////
+const RootHomeNetflix = styled(Box)(({ theme }) => ({
+  background: "#000",
+  paddingBottom: "100px",
+  [theme.breakpoints.down("sm")]: {},
+}));
+
+//////////////////// EXPORT FUNCTION ////////////////////
+export default function HomeNetflix({
+  moviePosters,
+  trendingNow,
   topRated,
   actionMovies,
   comedyMovies,
   horrorMovies,
   romanceMovies,
-  documentaries, }) {
-    return (
-        <>
-        <Featured type="movie" moviePosters={moviePosters} />
-        
-        <Row title="Tendance actuelle" movies={trendingNow} />
-        <Row title="Mieux notée" movies={topRated} />
-        <Row title="Action/Thrillers" movies={actionMovies} />
-        <Row title="Comédies" movies={comedyMovies} />
-        <Row title="Films d'horreur" movies={horrorMovies} />
-        <Row title="Films de romance" movies={romanceMovies} />
-        <Row title="Documentaires" movies={documentaries} />
+  documentaries,
+}) {
+  //////////////////// DATA ////////////////////
+  const dataListRowMovies = [
+    {
+      title: "Tendance actuelle",
+      movies: trendingNow,
+      url: "/listMovieByCategories/trendingNow",
+    },
+    {
+      title: "Mieux notée",
+      movies: topRated,
+      url: "/listMovieByCategories/topRated",
+    },
+    {
+      title: "Action/Thrillers",
+      movies: actionMovies,
+      url: "/listMovieByCategories/actionMovies",
+    },
+    {
+      title: "Comédies",
+      movies: comedyMovies,
+      url: "/listMovieByCategories/comedy",
+    },
+    {
+      title: "Films d'horreur",
+      movies: horrorMovies,
+      url: "/listMovieByCategories/horror",
+    },
+    {
+      title: "Films de romance",
+      movies: romanceMovies,
+      url: "/listMovieByCategories/romance",
+    },
+    {
+      title: "Documentaires",
+      movies: documentaries,
+      url: "/listMovieByCategories/documentaries",
+    },
+  ];
 
-        <Footer /> 
-        </>
-    )
+  return (
+    // {/* LIST ROWS */}
+    <RootHomeNetflix>
+      {/* FEATURED */}
+      <Featured type='movie' moviePosters={moviePosters} />
+      {dataListRowMovies?.map(({ title, movies, url }) => (
+        <Row title={title} movies={movies} url={url} />
+      ))}
+    </RootHomeNetflix>
+  );
 }

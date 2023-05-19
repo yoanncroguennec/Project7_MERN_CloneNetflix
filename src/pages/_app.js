@@ -2,6 +2,7 @@
 import { SessionProvider } from "next-auth/react";
 // STYLES
 import "@/styles/globals.css";
+import { Layout } from "../components/layouts/index";
 
 
 export default function App({
@@ -10,7 +11,9 @@ export default function App({
 }) {
   return (
     <SessionProvider session={session}>
+      <Layout>
         <Component {...pageProps} />
+      </Layout>
     </SessionProvider>
   );
 }

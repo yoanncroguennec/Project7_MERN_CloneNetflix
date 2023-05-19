@@ -1,0 +1,9 @@
+/* EFFECT TRANSITION PAGES */
+.content {
+    opacity: 0;
+    transition: 1s;
+}
+
+.fadeIn {
+    opacity: 1;
+}

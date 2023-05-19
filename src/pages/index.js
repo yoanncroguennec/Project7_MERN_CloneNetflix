@@ -1,11 +1,11 @@
 // NEXT AUTH
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
+// PAGES
 import Login from "./login";
-// UTILS API
-import requests from "@/utils/api/Requests";
 // COMMONS
 import HomeNetflix from "@/components/common/home/HomeNetflix";
-
+// UTILS API
+import requests from "@/utils/api/Requests";
 
 
 export default function Home({
