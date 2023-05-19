@@ -9,7 +9,7 @@ import { useSession, signOut } from "next-auth/react";
 export default function DropdownNavbar() {
   //////////////////// SESSION ////////////////////
   const { data: session } = useSession();
-  console.log(session);
+  // console.log(session);
 
   //////////////////// MENU MUI ////////////////////
   const [anchorEl, setAnchorEl] = useState(null);

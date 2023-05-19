@@ -14,6 +14,7 @@ import { baseUrlImg } from "@/utils/constants/Constants";
 
 //////////////////// EXPORT FUNCTION ////////////////////
 export default function ListMovies({ movie }) {
+  console.log(movie);
   //////////////////// STYLES ////////////////////
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
@@ -67,7 +68,7 @@ export default function ListMovies({ movie }) {
 
   //////////////////// RETURN ////////////////////
   return (
-    <Link href={`/movie/${movie.id}`} style={styleLink}>
+    <Link href={`/movie/${movie?.id}`} style={styleLink}>
       <RootListMovies>
         <Image
           alt=""
