@@ -10,14 +10,14 @@ export const connectionSocialNetworks = [
     text: "Google",
     url: "google",
   },
-  {
-    icon: <BsFacebook color='blue' size={sizeIcon} />,
-    text: "Facebook",
-    url: "facebook",
-  },
-  {
-    icon: <BsGithub size={sizeIcon} />,
-    text: "Github",
-    url: "github",
-  },
+  // {
+  //   icon: <BsFacebook color='blue' size={sizeIcon} />,
+  //   text: "Facebook",
+  //   url: "facebook",
+  // },
+  // {
+  //   icon: <BsGithub size={sizeIcon} />,
+  //   text: "Github",
+  //   url: "github",
+  // },
 ];

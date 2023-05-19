@@ -34,9 +34,9 @@ export default function Footer() {
       </Typography>
       <BoxListsColumnsFooter>
         {dataFooter.map(({ titlesColumFooter, index }) => (
-          <ListsColumnsFooter key={index}>
+          <ListsColumnsFooter key={(index, index)}>
             {titlesColumFooter.map((item) => (
-              <Typography>{item}</Typography>
+              <Typography key={index}>{item}</Typography>
             ))}
           </ListsColumnsFooter>
         ))}
